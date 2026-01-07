@@ -1,0 +1,189 @@
+/* ===== ReAlign Academic Style ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Source Sans Pro', 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Footer icons */
+.footer .icon-link {
+  font-size: 22px;
+  color: #1e3a5f;
+  transition: all 0.25s ease;
+}
+
+.footer .icon-link:hover {
+  color: #2d5a87;
+  transform: scale(1.05);
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+}
+
+.teaser {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.publication-banner {
+  max-height: parent;
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-title {
+  font-family: 'Crimson Text', 'Times New Roman', Georgia, serif;
+}
+
+.publication-authors {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.publication-venue {
+  color: #1e3a5f;
+  width: fit-content;
+  font-weight: 600;
+  background: rgba(201, 162, 39, 0.15);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #c9a227;
+}
+
+.publication-awards {
+  color: #c9a227;
+  width: fit-content;
+  font-weight: 700;
+  background: rgba(201, 162, 39, 0.1);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+}
+
+.publication-authors a {
+  color: #1e3a5f !important;
+  transition: all 0.25s ease;
+}
+
+.publication-authors a:hover {
+  color: #2d5a87 !important;
+  text-decoration: none;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(30, 58, 95, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #1e3a5f;
+}
+
+.eql-cntrb { 
+  font-size: smaller;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(30, 58, 95, 0.15);
+  color: #1a1a2e;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d5a87;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e3a5f;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid rgba(30, 58, 95, 0.4);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+a, button, .button {
+  transition: all 0.25s ease;
+}
+
+/* Academic paper figure caption style */
+.figure-caption {
+  font-size: 0.9rem;
+  color: #4a4a5a;
+  text-align: justify;
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+.figure-caption strong {
+  color: #1e3a5f;
+}
+
+
+
