@@ -1,5 +1,5 @@
 This repository hosts the source for Wanjiang Weng's academic homepage.
-
+https://wengwanjiang.github.io/
 ## Structure
 
 - `index.html`: Single-page homepage (entry point)
