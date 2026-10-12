@@ -25,6 +25,7 @@
       h1 { font-size: 28px; }
       h2 { font-size: 22px; }
       header .position { font-size: 17.6px; }
+      #about-me + p { text-align: justify; }
       .news-scroll { max-height: 180px; overflow-y: auto; padding-right: 12px; margin-bottom: 20px; scrollbar-width: thin; }
       .news-scroll ul { margin: 0; padding: 0; list-style: none; }
       .news-scroll li { display: grid; grid-template-columns: 62px minmax(0, 1fr); column-gap: 8px; border-left: 2px solid #cfd7e5; padding: 2px 0 2px 10px; margin-bottom: 7px; }
@@ -43,22 +44,33 @@
       .publications .author, .publications .periodical { font-size: 14px; }
       .publications .links { margin-top: 4px; }
       .publications .links a.btn { display: inline-block; margin: 0 3px 3px 0; font-size: 12px; border-radius: 3px; }
+      .publications ol.bibliography li .links a.btn,
+      .report-links a[href] { color: #3399cc; border-color: currentColor; }
+      .publications ol.bibliography li .links a.btn:hover,
+      .report-links a[href]:hover { color: #006699; border-color: currentColor; }
       .technical-reports { margin: 0 0 28px; font-size: 14px; line-height: 1.5; }
       .report-card { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: start; }
-      .report-visual { aspect-ratio: 4 / 3; background: #f6f8fb; border: 1px solid #dce3ec; border-radius: 6px; overflow: hidden; }
-      .report-visual img { display: block; width: 100%; height: 100%; object-fit: contain; }
-      .report-label { margin-bottom: 5px; color: #788395; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
-      .report-title { font-size: 17px; font-weight: 600; margin: 0 0 3px; line-height: 1.3; }
+      .report-visual { background: #f6f8fb; border: 1px solid #dce3ec; border-radius: 6px; overflow: hidden; }
+      .report-visual img { display: block; width: 100%; height: auto; }
+      .report-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 10px; margin-bottom: 3px; }
+      .report-label { color: #788395; font-size: 12px; white-space: nowrap; }
+      .report-title { font-size: 15px; font-weight: 600; margin: 0; line-height: 1.4; }
       .report-subtitle { color: #788395; font-style: italic; }
-      .technical-reports p { margin: 0 0 8px; }
-      .report-rankings { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
-      .report-rankings a { display: inline-flex; align-items: baseline; gap: 7px; padding: 5px 10px; border: 1px solid #dce3ec; border-radius: 4px; color: #043361; background: #f6f8fb; font-size: 12px; }
-      .report-rankings strong { font-size: 18px; color: inherit; font-weight: 600; }
+      .report-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-bottom: 6px; }
+      .report-meta .report-subtitle { margin: 0; }
+      .technical-reports p { margin: 0 0 6px; }
+      .report-rankings { display: inline-flex; flex-wrap: wrap; gap: 5px; }
+      .report-rankings a { display: inline-flex; align-items: baseline; gap: 3px; padding: 0 6px; border: 1px solid #dce3ec; border-radius: 3px; color: #043361; background: #f6f8fb; font-size: 10px; line-height: 1.7; white-space: nowrap; }
+      .report-rankings strong { font-size: inherit; color: inherit; font-weight: 600; }
       .report-rankings a:hover { border-color: #3399cc; }
-      .report-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-      .report-links a { display: inline-block; padding: 1px 9px; border: 1px solid currentColor; border-radius: 3px; font-size: 12px; }
+      .report-links { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+      .report-links a { display: inline-block; padding: 0 7px; border: 1px solid currentColor; border-radius: 3px; font-size: 12px; }
       .report-links a:not([href]) { color: #929baa; cursor: default; border-color: #dce3ec; }
       @media (prefers-color-scheme: dark) {
+        .publications ol.bibliography li .links a.btn,
+        .report-links a[href] { color: #3eb7f0; }
+        .publications ol.bibliography li .links a.btn:hover,
+        .report-links a[href]:hover { color: #8dd8fa; }
         .news-date { color: #3eb7f0; }
         .news-text { color: #dadbdf; }
         .news-scroll li { border-color: #465267; }
@@ -364,24 +376,29 @@
 <h2 id="technical-report">Technical Report</h2>
 <div class="technical-reports" aria-labelledby="technical-report">
   <article class="report-card">
-    <div class="report-visual" aria-hidden="true">
-      <!-- TODO: Fill in the image path, then uncomment the image below. -->
-      <!-- <img src="" alt="Vimoo 1.0 video generation framework"> -->
+    <div class="report-visual">
+      <img src="./assets/img/vimoo-demo.png" alt="Vimoo 1.0 video generation framework">
     </div>
     <div class="report-content">
-      <div class="report-label">Technical report · October 2026</div>
-      <h3 class="report-title"><a href="https://vimoo.ai/">Vimoo 1.0</a></h3>
-      <p class="report-subtitle">Video Generation Foundation Model</p>
-      <p>I contributed to the Vimoo video generation foundation model team and was responsible for the <strong>Video Enhancer</strong>, now deployed as a <strong>commercially available API</strong>.</p>
+      <div class="report-heading">
+        <h3 class="report-title"><a href="https://vimoo.ai/">Vimoo 1.0</a></h3>
       <!-- Rankings supplied by the author; update when reporting new results. -->
       <div class="report-rankings" aria-label="Artificial Analysis rankings">
-        <a href="https://artificialanalysis.ai/video/leaderboard/text-to-video?audio-output=false" aria-label="Artificial Analysis text-to-video leaderboard: rank 7"><strong>#7</strong> AA · Text-to-Video</a>
-        <a href="https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false" aria-label="Artificial Analysis image-to-video leaderboard: rank 5"><strong>#5</strong> AA · Image-to-Video</a>
+        <a href="https://artificialanalysis.ai/video/leaderboard/text-to-video?audio-output=false" aria-label="Artificial Analysis text-to-video leaderboard: rank 7">AA T2V <strong>#7</strong></a>
+        <a href="https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false" aria-label="Artificial Analysis image-to-video leaderboard: rank 5">AA I2V <strong>#5</strong></a>
       </div>
+      </div>
+      <div class="report-meta">
+        <p class="report-subtitle">Video Generation Foundation Model</p>
+        <span class="report-label">· October 2026</span>
+      </div>
+      <p>I contributed to the Vimoo video generation foundation model team and was responsible for the <strong>Video Enhancer</strong>, now deployed as a <strong>commercially available API</strong>.</p>
       <div class="report-links">
         <a href="https://vimoo.ai/">Website</a>
-        <!-- TODO: Add href="YOUR_ARXIV_URL" and remove aria-disabled when ready. -->
-        <a class="report-arxiv" aria-disabled="true">arXiv</a>
+        <!-- Temporary documentation URL; replace with the arXiv URL when available. -->
+        <a class="report-arxiv" href="https://vimoo.ai/vimoo-docs/models">arXiv</a>
+        <a href="https://github.com/Vimoo-AI/Vimoo-1.0">GitHub</a>
+        <a href="https://huggingface.co/collections/Vimoo-AI/vimoo-10">Hugging Face</a>
         <!-- TODO: Add href="YOUR_API_URL" and remove aria-disabled when ready. -->
         <a class="report-api" aria-disabled="true">Enhancer API</a>
       </div>
