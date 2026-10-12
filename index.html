@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wanjiang Weng | Southeast University</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wanjiang Weng — academic homepage.">
+    <meta name="keywords" content="Wanjiang Weng, academic homepage, Southeast University">
+
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+
+    <!-- Icon fonts (CDN). Using CDN avoids missing local font files (webfonts/fonts). -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/publications.css">
+    <style>
+      /* Compact academic typography, scoped to this homepage. */
+      body { font-family: "Crimson Pro", Georgia, serif; font-size: 14px; line-height: 1.5; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+      header .position { font-size: 17.6px; }
+      .news-scroll { max-height: 180px; overflow-y: auto; padding-right: 12px; margin-bottom: 20px; scrollbar-width: thin; }
+      .news-scroll ul { margin: 0; padding: 0; list-style: none; }
+      .news-scroll li { display: grid; grid-template-columns: 62px minmax(0, 1fr); column-gap: 8px; border-left: 2px solid #cfd7e5; padding: 2px 0 2px 10px; margin-bottom: 7px; }
+      .news-date { color: #043361; font-weight: 600; white-space: nowrap; }
+      .news-text { color: #222; }
+      .news-scroll:focus-visible { outline: 2px solid #3399cc; outline-offset: 4px; }
+      #publications { margin: 2px 0 15px; }
+      .contribution-note { font-size: 12px; color: #888; font-weight: normal; }
+      .publications { margin-top: 0; font-size: 14px; line-height: 1.5; }
+      .publications .pub-row { align-items: center; margin-bottom: 22px; gap: 20px; }
+      .publications .pub-row > .abbr { flex: 0 0 220px; height: auto; margin: 0; padding: 0 !important; }
+      .publications .pub-row > .col-sm-9 { flex: 1; min-width: 0; padding: 0 !important; }
+      .publications ol.bibliography li .teaser { box-sizing: border-box; display: block; width: 220px; height: auto; margin: 0; object-fit: contain; background: #fff; border-radius: 5px; box-shadow: 2px 2px 5px #aaa; }
+      .publications ol.bibliography li .abbr abbr { top: 0; left: 0; padding: 4px 8px; font-size: 11px; }
+      .publications ol.bibliography li .title { font-size: 14px; font-weight: 600; }
+      .publications .author, .publications .periodical { font-size: 14px; }
+      .publications .links { margin-top: 4px; }
+      .publications .links a.btn { display: inline-block; margin: 0 3px 3px 0; font-size: 12px; border-radius: 3px; }
+      .technical-reports { margin: 0 0 28px; font-size: 14px; line-height: 1.5; }
+      .report-card { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: start; }
+      .report-visual { aspect-ratio: 4 / 3; background: #f6f8fb; border: 1px solid #dce3ec; border-radius: 6px; overflow: hidden; }
+      .report-visual img { display: block; width: 100%; height: 100%; object-fit: contain; }
+      .report-label { margin-bottom: 5px; color: #788395; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+      .report-title { font-size: 17px; font-weight: 600; margin: 0 0 3px; line-height: 1.3; }
+      .report-subtitle { color: #788395; font-style: italic; }
+      .technical-reports p { margin: 0 0 8px; }
+      .report-rankings { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+      .report-rankings a { display: inline-flex; align-items: baseline; gap: 7px; padding: 5px 10px; border: 1px solid #dce3ec; border-radius: 4px; color: #043361; background: #f6f8fb; font-size: 12px; }
+      .report-rankings strong { font-size: 18px; color: inherit; font-weight: 600; }
+      .report-rankings a:hover { border-color: #3399cc; }
+      .report-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .report-links a { display: inline-block; padding: 1px 9px; border: 1px solid currentColor; border-radius: 3px; font-size: 12px; }
+      .report-links a:not([href]) { color: #929baa; cursor: default; border-color: #dce3ec; }
+      @media (prefers-color-scheme: dark) {
+        .news-date { color: #3eb7f0; }
+        .news-text { color: #dadbdf; }
+        .news-scroll li { border-color: #465267; }
+        .report-visual, .report-rankings a { background: #272e3a; border-color: #465267; }
+        .report-rankings a { color: #3eb7f0; }
+        .report-label, .report-subtitle { color: #a9b4c5; }
+      }
+      @media (max-width: 600px) {
+        .publications .pub-row > .abbr { flex-basis: 36%; }
+        .publications ol.bibliography li .teaser { width: 100%; }
+        .report-card { grid-template-columns: 36% minmax(0, 1fr); gap: 16px; }
+      }
+      @media (max-width: 480px) {
+        .publications .pub-row { display: block; }
+        .publications .pub-row > .abbr { width: min(100%, 280px); margin-bottom: 12px; }
+        .report-card { grid-template-columns: 1fr; gap: 14px; }
+        .report-visual { width: min(100%, 280px); box-sizing: border-box; }
+        .news-scroll li { grid-template-columns: 62px minmax(0, 1fr); column-gap: 6px; }
+        .contribution-note { display: block; margin-top: 6px; }
+      }
+      @media print { .news-scroll { max-height: none; overflow: visible; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        
+        
+        <a class="image avatar"><img src="./assets/img/my.jpg" alt="avatar"></a>
+        
+
+        <h1>Wanjiang Weng</h1>
+
+        
+        <div class="position">Master Student</div>
+        <br>
+        
+        
+        <a href="https://wanjiang-weng.github.io/" rel="noopener"><span class="autocolor">Southeast University</span></a>
+        <br>
+        
+        
+        <div class="email">wengwanjiang@gmail.com</div>
+        
+
+        <br>
+        <br>
+        <div class="social-icons">
+        
+        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=HSl8zisAAAAJ">
+          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
+        </a>  
+        
+        <a style="margin: 0 5px 0 0" href="assets/files/PhD-Application-CV-Weng-Wanjiang.pdf">
+          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
+        </a>
+        
+        <a style="margin: 0 5px 0 0" href="https://github.com/wengwanjiang">
+          <i class="fab fa-github"></i>
+        </a>
+        
+
+        
+
+        
+        </div>
+        <br>
+
+      </header>
+      <section>
+
+      <h2 id="about-me">About Me</h2>
+
+<p>Hello! I’m currently a Master student at <a href="https://www.seu.edu.cn/">Southeast University</a>, where I’m fortunate to be supervised by <a href="https://hongsong-wang.github.io/">Prof. Hongsong Wang</a>. I also work closely with <a href="https://panzhous.github.io/">Prof. Pan Zhou</a> at Singapore Management University. I have a wide range of research topics and interests, feel free to contact me if you have any questions or would like to discuss my works.</p>
+
+<p><strong>🎓 I’m currently looking for PhD position starting from 2027 Fall, If you are interested, please feel free to contact me.</strong></p>  
+ <!-- Here is my <a href="./assets/files/PhD-Application-CV-Weng Wanjiang.pdf">resume</a>. -->
+
+<h2 id="research-interests">Research Interests</h2>
+<ul>
+  <li><strong>Human Motion Perception and Generation</strong></li>
+  <li><strong>AIGC</strong></li>
+  <li><strong>Multimodal Large Language Models</strong></li>
+</ul>
+
+<h2 id="news">News</h2>
+<div class="news-scroll" role="region" aria-labelledby="news" tabindex="0">
+  <ul>
+    <li><span class="news-date">Oct. 26</span><span class="news-text">🎉 <a href="https://vimoo.ai/">Vimoo 1.0</a> is now live! I was responsible for its Video Enhancer, now a commercial API. <a href="#technical-report">Details ↗</a></span></li>
+    <li><span class="news-date">Oct. 26</span><span class="news-text">🏅 Honored to be recognized as a <strong>Top Reviewer at NeurIPS 2026</strong>!</span></li>
+    <li><span class="news-date">Oct. 26</span><span class="news-text">🎉 One paper has been accepted to TPAMI (<a href="https://arxiv.org/abs/2603.27185">MotionRFT</a>).</span></li>
+    <li><span class="news-date">Sep. 26</span><span class="news-text">🎉 One paper has been accepted to NeurIPS 2026 (<a href="https://arxiv.org/abs/2609.35407">BiMoGen</a>).</span></li>
+    <li><span class="news-date">Jan. 26</span><span class="news-text">🎉 One paper has been accepted to ICLR 2026 (<a href="https://arxiv.org/abs/2602.07967">EasyTune</a>).</span></li>
+    <li><span class="news-date">Nov. 25</span><span class="news-text">🎉 One paper has been accepted to AAAI 2026 (<a href="https://arxiv.org/abs/2511.19217">ReAlign</a>).</span></li>
+    <li><span class="news-date">Sep. 25</span><span class="news-text">🎉 One paper has been accepted to TPAMI (<a href="https://arxiv.org/abs/2508.12586">FoundSkelModel</a>).</span></li>
+    <li><span class="news-date">Dec. 24</span><span class="news-text">🎉 One paper has been accepted to AAAI 2025 (<a href="https://arxiv.org/abs/2412.09220">USDRL</a>).</span></li>
+  </ul>
+</div>
+
+
+
+<h2 id="publications">
+  Publications
+  <span class="contribution-note">
+    (* equal contribution, † corresponding author)
+  </span>
+</h2>
+
+<div class="publications">
+  <ol class="bibliography">
+
+    <li>
+      
+
+      <!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start-->
+      <div class="pub-row"> <!--start-->
+        <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+          <img src="./assets/img/motionrft-framework.png" class="teaser img-fluid z-depth-1" >
+          <abbr class="badge">TPAMI</abbr>
+        </div>
+
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2603.27185">
+                MotionRFT: Unified Reinforcement Fine-Tuning for Text-to-Motion Generation
+            </a>
+          </div>
+
+          <div class="author">
+            Xiaofen Tan<sup>*</sup>, <strong>Wanjiang Weng<sup>*</sup></strong>, Hongsong Wang<sup>†</sup>, Xin Geng, Fang Zhao, Liang Wang
+          </div>
+
+          <div class="periodical">
+            <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026.</em>
+          </div>
+
+          <div class="links">
+            <a href="https://arxiv.org/abs/2603.27185" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            <a href="https://github.com/Xiaofeng-Tan/MotionRFT" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            <a href="https://xiaofeng-tan.github.io/projects/MotionRFT/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
+          </div>
+        </div>
+      </div><!--end-->
+
+
+      <!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end-->
+
+
+      <!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start--><!--start-->
+      <div class="pub-row"> <!--start-->
+        <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+          <img src="./assets/img/bimogen-poster.png" class="teaser img-fluid z-depth-1" >
+          <abbr class="badge">NeurIPS</abbr>
+        </div>
+
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2609.35407">
+              BiMoGen: Bidirectional Motion-Text Generation via Unified Masked Discrete Diffusion
+            </a>
+          </div>
+
+          <div class="author">
+            <strong>Wanjiang Weng<sup>*</sup></strong>, Yongliang Wu<sup>*</sup>, Xiaofeng Tan, Xingyu Zhu,   Wenbo Zhu, Hongsong Wang<sup>†</sup>
+          </div>
+
+          <div class="periodical">
+            <em>Advances in Neural Information Processing Systems (NeurIPS), 2026.</em>
+          </div>
+
+          <div class="links">
+            <a href="https://arxiv.org/abs/2609.35407" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            <a href="https://github.com/wengwanjiang/BiMoGen" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            <a href="https://wengwanjiang.github.io/BiMoGen-Page/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
+          </div>
+        </div>
+      </div><!--end-->
+
+
+      <!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end--><!--end-->
+      <div class="pub-row"> <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+        <img src="./assets/img/eztune_poster.png" class="teaser img-fluid z-depth-1" > 
+          <abbr class="badge">ICLR</abbr>
+        </div>
+      
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2602.07967">
+              EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation
+            </a>
+          </div>
+      
+          <div class="author">
+             Xiaofeng Tan<sup>*</sup>, <strong>Wanjiang Weng</strong><sup>*</sup>, Haodong Lei, Hongsong Wang<sup>†</sup>
+          </div>
+      
+          <div class="periodical">
+            <em>International Conference on Learning Representations (ICLR), 2026</em>
+          </div>
+      
+          <div class="links">
+            <a href="https://arxiv.org/abs/2602.07967" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size: 12px;">PDF</a>
+            <a href="https://github.com/wengwanjiang/EasyTune" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size: 12px;">Code</a>
+            <a href="https://xiaofeng-tan.github.io/projects/EasyTune/index.html" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size: 12px;">Project</a>
+          </div>
+        </div>
+      </div>
+
+      
+      
+
+      <div class="pub-row"> <!--start-->
+        <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+          <img src="./assets/img/realign_poster.png" class="teaser img-fluid z-depth-1" >
+          <abbr class="badge">AAAI</abbr>
+        </div>
+
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2511.19217">
+              ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment
+            </a>
+          </div>
+
+          <div class="author">
+            <strong>Wanjiang Weng<sup>*</sup></strong>, Xiaofeng Tan<sup>*</sup>, Junbo Wang, Guo-Sen Xie,   Pan Zhou, Hongsong Wang<sup>†</sup>
+          </div>
+
+          <div class="periodical">
+            <em>AAAI Conference on Artificial Intelligence (AAAI), 2026.</em>
+          </div>
+
+          <div class="links">
+            <a href="https://arxiv.org/abs/2511.19217" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            <a href="https://github.com/wengwanjiang/ReAlign" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            <a href="https://github.com/wengwanjiang/ReAlign-Page" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
+          </div>
+        </div>
+      </div><!--end-->
+    <!--   -->
+      <div class="pub-row"> <!--start-->
+        <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+          <img src="./assets/img/FoundSkelModel.jpg" class="teaser img-fluid z-depth-1" >
+          <abbr class="badge">TPAMI</abbr>
+        </div>
+
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2508.12586">
+              Foundation Model for Skeleton-Based Human Action Understanding
+            </a>
+          </div>
+
+          <div class="author">
+            Hongsong Wang<sup>†</sup>, <strong>Wanjiang Weng</strong>, Junbo Wang, Fang Zhao, </br>Guo-Sen Xie, Xin Geng, Liang Wang
+          </div>
+
+          <div class="periodical">
+            <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025.</em>
+          </div>
+
+          <div class="links">
+            <a href="https://arxiv.org/abs/2508.12586" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            <a href="https://github.com/wengwanjiang/FoundSkelModel" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+          </div>
+        </div>
+      </div><!--end-->
+      <div class="pub-row"> <!--start-->
+        <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px;">
+          <img src="./assets/img/usdrl.jpg" class="teaser img-fluid z-depth-1" >
+          <abbr class="badge">AAAI</abbr>
+        </div>
+
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
+          <div class="title">
+            <a href="https://arxiv.org/abs/2412.09220">
+              USDRL: Unified Skeleton-Based Dense Representation Learning with Multi-Grained Feature Decorrelation
+            </a>
+          </div>
+
+          <div class="author">
+            <strong>Wanjiang Weng</strong>, Junbo Wang, Lei He, Guosen Xie,  Hongsong Wang<sup>†</sup>
+          </div>
+
+          <div class="periodical">
+            <em>AAAI Conference on Artificial Intelligence (AAAI), 2025.</em>
+          </div>
+
+          <div class="links">
+            <a href="https://arxiv.org/abs/2412.09220" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            <a href="https://github.com/wengwanjiang/USDRL" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+          </div>
+        </div>
+      </div><!--end-->
+    </li>
+
+    <br>
+
+  </ol>
+</div>
+
+
+<h2 id="technical-report">Technical Report</h2>
+<div class="technical-reports" aria-labelledby="technical-report">
+  <article class="report-card">
+    <div class="report-visual" aria-hidden="true">
+      <!-- TODO: Fill in the image path, then uncomment the image below. -->
+      <!-- <img src="" alt="Vimoo 1.0 video generation framework"> -->
+    </div>
+    <div class="report-content">
+      <div class="report-label">Technical report · October 2026</div>
+      <h3 class="report-title"><a href="https://vimoo.ai/">Vimoo 1.0</a></h3>
+      <p class="report-subtitle">Video Generation Foundation Model</p>
+      <p>I contributed to the Vimoo video generation foundation model team and was responsible for the <strong>Video Enhancer</strong>, now deployed as a <strong>commercially available API</strong>.</p>
+      <!-- Rankings supplied by the author; update when reporting new results. -->
+      <div class="report-rankings" aria-label="Artificial Analysis rankings">
+        <a href="https://artificialanalysis.ai/video/leaderboard/text-to-video?audio-output=false" aria-label="Artificial Analysis text-to-video leaderboard: rank 7"><strong>#7</strong> AA · Text-to-Video</a>
+        <a href="https://artificialanalysis.ai/video/leaderboard/image-to-video?audio-output=false" aria-label="Artificial Analysis image-to-video leaderboard: rank 5"><strong>#5</strong> AA · Image-to-Video</a>
+      </div>
+      <div class="report-links">
+        <a href="https://vimoo.ai/">Website</a>
+        <!-- TODO: Add href="YOUR_ARXIV_URL" and remove aria-disabled when ready. -->
+        <a class="report-arxiv" aria-disabled="true">arXiv</a>
+        <!-- TODO: Add href="YOUR_API_URL" and remove aria-disabled when ready. -->
+        <a class="report-api" aria-disabled="true">Enhancer API</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<h2 id="services">Services</h2>
+
+<h4 style="margin:0 10px 0;">Conference Reviewers</h4>  
+<ul style="margin:0 0 5px;">  
+  <li><span class="autocolor">NeurIPS26 (Top Reviewer)</span></li>  
+</ul>  
+  
+<h4 style="margin:0 10px 0;">Journal Reviewers</h4>  
+<ul style="margin:0 0 20px;">  
+  <li><span class="autocolor">TPAMI</span></li>  
+</ul>
+
+
+<h2 id="awards">Awards</h2>
+<ul>
+  <!-- <li><strong>History</strong> (I usually watch to relax after research.)</li>
+  <li><strong>Reading</strong> (papers + non-fiction)</li>
+  <li><strong>Walking</strong> (short city walks)</li> -->
+</ul>
+
+<h2 id="hobbies">Hobbies</h2>
+<ul>
+  <!-- <li><strong>History</strong> (I usually watch to relax after research.)</li>
+  <li><strong>Reading</strong> (papers + non-fiction)</li>
+  <li><strong>Walking</strong> (short city walks)</li> -->
+</ul>
+
+
+<ul style="margin:0 0 20px;">
+</ul>
+
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=20teTGc5TXHvnx42G0Z1ogf8Kohp1OB6CYQvJOE3DSg&cl=ffffff&w=a"></script>
+</section>
+
+</div>
+
+</body>
+
+</html>
